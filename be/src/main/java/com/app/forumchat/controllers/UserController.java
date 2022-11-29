@@ -1,7 +1,7 @@
 package com.app.forumchat.controllers;
 
-import com.app.forumchat.models.User;
-import com.app.forumchat.services.UserService;
+import com.app.forumchat.models.auth.User;
+import com.app.forumchat.services.UserService_OLD;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/user")
 public class UserController {
     @Autowired
-    private UserService us;
+    private UserService_OLD us;
 
     @PostMapping("/save")
     public User save(@RequestBody User user){

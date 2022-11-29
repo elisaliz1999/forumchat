@@ -1,16 +1,15 @@
-package com.app.forumchat.models;
+package com.app.forumchat.models.auth;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Data
@@ -36,6 +35,11 @@ public class User {
     @NotBlank
     @JsonFormat(pattern = "dd-MM-yyyy")
     private Date birthday;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<Role> roles = new HashSet<Role>();
+
+    private boolean active; //TODO aggiornare metodi registrati per settare la variabile + metodo di admin per disattivare un user
 
     private int points;
 }
