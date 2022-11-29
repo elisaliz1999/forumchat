@@ -1,23 +1,21 @@
 package com.app.forumchat.models.auth;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
-@Getter
-@Setter
+@Data
 public class Role {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
 
-    @Column
     private ERole name;
-
 
     public Role() {
     }
@@ -25,4 +23,5 @@ public class Role {
     public Role(ERole role) {
         this.name = role;
     }
+
 }

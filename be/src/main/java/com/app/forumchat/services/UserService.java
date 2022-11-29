@@ -1,14 +1,14 @@
 package com.app.forumchat.services;
 
 import com.app.forumchat.models.auth.User;
-import com.app.forumchat.repos.auth.UserRepo;
+import com.app.forumchat.repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
-public class UserService_OLD {
+public class UserService {
     @Autowired
     private UserRepo ur;
 

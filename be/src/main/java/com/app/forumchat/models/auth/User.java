@@ -7,9 +7,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Data
@@ -20,26 +18,37 @@ public class User {
     private long id;
 
     @Email
-    @NotBlank
+    //@NotBlank
     private String email;
 
     @NotBlank
     private String username;
 
     @NotBlank
+    private String password;
+
+    //@NotBlank
     private String name;
 
-    @NotBlank
+    //@NotBlank
     private String last_name;
 
-    @NotBlank
+    //@NotBlank
     @JsonFormat(pattern = "dd-MM-yyyy")
     private Date birthday;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<Role> roles = new HashSet<Role>();
-
-    private boolean active; //TODO aggiornare metodi registrati per settare la variabile + metodo di admin per disattivare un user
-
     private int points;
+
+    @OneToMany(fetch = FetchType.EAGER)
+    private List<Role> roles = new ArrayList<>();
+
+    public User(String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+
+    public User() {
+    }
+
 }
