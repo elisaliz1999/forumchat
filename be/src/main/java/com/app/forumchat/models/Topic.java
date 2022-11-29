@@ -18,7 +18,7 @@ public class Topic {
 
     private String body;
 
-    @OneToMany(mappedBy="topic")
+    @OneToMany(mappedBy = "topic")
     private List<Answer> answer;
 
     @OneToOne

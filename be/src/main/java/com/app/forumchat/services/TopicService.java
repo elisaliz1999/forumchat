@@ -20,19 +20,19 @@ public class TopicService {
     @Autowired
     private AnswerRepo ar;
 
-    public Topic saveTopic(Topic topic, long id){
+    public Topic saveTopic(Topic topic, long id) {
         Optional<User> user = ur.findById(id);
-        if(user.isPresent()){
+        if (user.isPresent()) {
             topic.setUser(user.get());
             return tr.save(topic);
         }
         return null;
     }
 
-    public Answer saveAnswer(Answer answer, long idT, long idU){
+    public Answer saveAnswer(Answer answer, long idT, long idU) {
         Optional<User> user = ur.findById(idU);
         Optional<Topic> topic = tr.findById(idT);
-        if(user.isPresent() && topic.isPresent()){
+        if (user.isPresent() && topic.isPresent()) {
             answer.setTopic(topic.get());
             answer.setUser(user.get());
             return ar.save(answer);

@@ -22,7 +22,6 @@ public class JwtUtils {
     private int jwtExpirationMs;
 
     /**
-     *
      * @param authentication
      * @return
      */
@@ -37,7 +36,6 @@ public class JwtUtils {
     }
 
     /**
-     *
      * @param token
      * @return
      */
@@ -46,7 +44,6 @@ public class JwtUtils {
     }
 
     /**
-     *
      * @param authToken
      * @return
      */

@@ -1,8 +1,8 @@
 package com.app.forumchat.config.auth;
 
 
-import com.app.forumchat.services.auth.JwtUtils;
 import com.app.forumchat.services.auth.AuthUserService;
+import com.app.forumchat.services.auth.JwtUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

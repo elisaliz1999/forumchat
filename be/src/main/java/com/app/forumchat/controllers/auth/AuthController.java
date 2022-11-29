@@ -5,7 +5,6 @@ import com.app.forumchat.models.auth.User;
 import com.app.forumchat.models.auth.UserDetailsModelDTO;
 import com.app.forumchat.repos.auth.RoleRepository;
 import com.app.forumchat.repos.auth.UserRepository;
-import com.app.forumchat.services.UserService;
 import com.app.forumchat.services.auth.AuthUserService;
 import com.app.forumchat.services.auth.JwtUtils;
 import org.springframework.beans.factory.annotation.Autowired;

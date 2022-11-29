@@ -11,21 +11,22 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ForumchatApplication implements CommandLineRunner {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ForumchatApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ForumchatApplication.class, args);
+    }
 
-	@Autowired private RoleRepository roleRepository;
+    @Autowired
+    private RoleRepository roleRepository;
 
-	@Override
-	public void run(String... args) throws Exception {
-		if (roleRepository.findByName(ERole.USER) == null) {
-			Role roleUser = new Role(ERole.USER);
-			roleRepository.save(roleUser);
-		}
-		if (roleRepository.findByName(ERole.ADMIN) == null) {
-			Role roleAdmin = new Role(ERole.ADMIN);
-			roleRepository.save(roleAdmin);
-		}
-	}
+    @Override
+    public void run(String... args) throws Exception {
+        if (roleRepository.findByName(ERole.USER) == null) {
+            Role roleUser = new Role(ERole.USER);
+            roleRepository.save(roleUser);
+        }
+        if (roleRepository.findByName(ERole.ADMIN) == null) {
+            Role roleAdmin = new Role(ERole.ADMIN);
+            roleRepository.save(roleAdmin);
+        }
+    }
 }
