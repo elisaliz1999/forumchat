@@ -1,6 +1,6 @@
 package com.app.forumchat.services;
 
-import com.app.forumchat.models.User;
+import com.app.forumchat.models.auth.User;
 import com.app.forumchat.repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

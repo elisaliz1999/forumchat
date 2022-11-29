@@ -2,10 +2,10 @@ package com.app.forumchat.services;
 
 import com.app.forumchat.models.Answer;
 import com.app.forumchat.models.Topic;
-import com.app.forumchat.models.User;
+import com.app.forumchat.models.auth.User;
 import com.app.forumchat.repos.AnswerRepo;
 import com.app.forumchat.repos.TopicRepo;
-import com.app.forumchat.repos.UserRepo;
+import com.app.forumchat.repos.auth.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

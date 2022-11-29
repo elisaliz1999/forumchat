@@ -1,16 +1,13 @@
-package com.app.forumchat.models;
+package com.app.forumchat.models.auth;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
-import java.util.Date;
+import java.util.*;
 
 @Entity
 @Data
@@ -21,21 +18,37 @@ public class User {
     private long id;
 
     @Email
-    @NotBlank
+    //@NotBlank
     private String email;
 
     @NotBlank
     private String username;
 
     @NotBlank
+    private String password;
+
+    //@NotBlank
     private String name;
 
-    @NotBlank
+    //@NotBlank
     private String last_name;
 
-    @NotBlank
+    //@NotBlank
     @JsonFormat(pattern = "dd-MM-yyyy")
     private Date birthday;
 
     private int points;
+
+    @OneToMany(fetch = FetchType.EAGER)
+    private List<Role> roles = new ArrayList<>();
+
+    public User(String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+
+    public User() {
+    }
+
 }

@@ -8,3 +8,7 @@ spring:
     hibernate.ddl-auto: update
     generate-ddl: true
     show-sql: true
+it:
+  elisa:
+    jwtSecret: 6z3ywof69YSSC5HZhWZbR58N
+    jwtExpirationMs: 3600000

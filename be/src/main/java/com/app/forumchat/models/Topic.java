@@ -1,5 +1,6 @@
 package com.app.forumchat.models;
 
+import com.app.forumchat.models.auth.User;
 import lombok.Data;
 
 import javax.persistence.*;
